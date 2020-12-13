@@ -2,4 +2,4 @@
 // const bcrypt = require('bcryptjs');
 // const config = require('../config/config');
 
-exports.authenticate = () => true;
+exports.authenticate = () => true
