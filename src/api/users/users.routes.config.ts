@@ -1,38 +1,38 @@
-import {CommonRoutesConfig, configureRoutes} from '../common/common.routes.config';
-import {UsersController} from './users.controller';
+import {CommonRoutesConfig, configureRoutes} from '../common/common.routes.config'
+import {UsersController} from './users.controller'
 
-import express from 'express';
+import express from 'express'
 
 export class UsersRoutes extends CommonRoutesConfig implements configureRoutes {
     constructor(app: express.Application) {
-        super(app, 'UsersRoute');
-        this.configureRoutes();
+        super(app, 'UsersRoute')
+        this.configureRoutes()
     }
 
     configureRoutes() {
-        const usersController = new UsersController();
-        this.app.get(`/users`, [
+        const usersController = new UsersController()
+        this.app.get('/users', [
             usersController.listUsers
-        ]);
+        ])
         
-        this.app.post(`/users`, [
+        this.app.post('/users', [
             usersController.createUser
-        ]);
+        ])
         
-        this.app.put(`/users/:userId`, [
+        this.app.put('/users/:userId', [
             usersController.put
-        ]);
+        ])
         
-        this.app.patch(`/users/:userId`, [
+        this.app.patch('/users/:userId', [
             usersController.patch
-        ]);
+        ])
         
-        this.app.delete(`/users/:userId`, [
+        this.app.delete('/users/:userId', [
             usersController.removeUser
-        ]);
+        ])
         
-        this.app.get(`/users/:userId`, [
+        this.app.get('/users/:userId', [
             usersController.getUserById
-        ]);
+        ])
     }
 }

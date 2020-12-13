@@ -13,8 +13,8 @@ import {UsersRoutes} from './src/api/users/users.routes.config'
 
 const app: express.Application = express()
 
-const routes: any = [];
-routes.push(new UsersRoutes(app));
+const routes: any = []
+routes.push(new UsersRoutes(app))
 
 // app.use(compression())
 // app.use(bodyParser.json())
@@ -41,6 +41,6 @@ app.listen(process.env.PORT, () => {
   console.log(`Started on  ${process.env.HOST}:${process.env.PORT}`)
 
   routes.forEach((route: CommonRoutesConfig) => {
-    console.log(`Routes configured for ${route.getName()}`);
-  });
+    console.log(`Routes configured for ${route.getName()}`)
+  })
 })
